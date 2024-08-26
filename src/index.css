@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ /* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap'); */
+
+:root {
+ --main-color: #0aad0a;
+ --light-color: #f0f3f2;
+ --shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .14) 0px 4px 5px 0px, rgba(145, 158, 171, .12) 0px 1px 10px 0px;
+ --font-family: 'Encode Sans Expanded', sans-serif;
+ --rating-color: #ffc908;
+}
+
+body {
+   font-family: "Cairo", sans-serif !important; 
+}
+
+
+.active {
+ @apply font-bold text-red-500
+}
+
+.label{
+ @apply peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 
+ duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 
+ rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-green-600 
+ peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+ peer-focus:scale-75 peer-focus:-translate-y-6
+}
+
+.inputs{
+ @apply block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 
+ border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 
+ focus:border-green-600 
+}
+
+.btn_submit{
+ @apply text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 
+ font-medium rounded-lg text-sm w-full 
+ sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800
+}
+
+.rating-color {
+ color: var(--rating-color);
+}
+
+.product:hover {
+ box-shadow: var(--shadow);
+ border: solid 1px var(--main-color);
+ border-radius: 0.5rem;
+}
+.product {
+ transition: all 0.3s ease;
+}
+
+.card .btn {
+ transition: transform 0.5s, opacity 0.5s;
+ transform: translateY(100%);
+ opacity: 0;
+}
+
+.card:hover .btn {
+ opacity: 1;
+ transform: translateY(0%);
+
+}
+
+.font-sm {
+ font-size: 14px;
+}
+
+.text-main {
+ color: var(--main-color);
+}
+
+.text-main-light {
+ color: var(--light-color);
+}
+
+.bg-main {
+ background-color: var(--main-color) !important;
+}
+
+.bg-main-light {
+ background-color: var(--light-color) !important;
+}
