@@ -126,7 +126,7 @@ export default function CartContextProvider({ children }) {
 
   // ===================== Payment =======================
     async function onlinePayment(cartId, shippingAddress) {
-        const url = `${window.location.protocol}//${window.location.host}`;
+        const url = `${window.location.origin}`;
         console.log(url);
         return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${url}`, {
             shippingAddress: shippingAddress,
