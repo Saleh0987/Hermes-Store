@@ -125,8 +125,9 @@ export default function CartContextProvider({ children }) {
   }
 
   // ===================== Payment =======================
-    async function onlinePayment(cartId, shippingAddress) {
-        return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${window.location.origin}`, {
+  async function onlinePayment(cartId, shippingAddress) {
+        const url = `${window.location.protocol}//${window.location.host}`;
+        return axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${url}`, {
             shippingAddress: shippingAddress,
         }, { headers })
             .then((res) => res)
