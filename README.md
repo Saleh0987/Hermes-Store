@@ -1,4 +1,4 @@
-# Fresh-Cart Project
+# Hermes-Store Project
 
 Fresh-Cart is an e-commerce web application designed to provide users with a seamless shopping experience. It includes product browsing, a cart system, and secure payment options like Cash on Delivery (COD) and Stripe.
 
