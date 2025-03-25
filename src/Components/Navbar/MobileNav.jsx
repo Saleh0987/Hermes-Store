@@ -20,7 +20,8 @@ const MobileNav = ({ closeNav, showNav }) => {
     top-0 bottom-0 h-[100vh] bg-[#000000e0] z-[1002]`}>
       
       {/* close icon */}
-      <ImCross onClick={closeNav} className=' absolute top-[2rem] right-[2rem] w-[2rem] h-[2rem] cursor-pointer text-white' />
+      <ImCross onClick={closeNav} className=' absolute top-[2rem] right-[2rem] w-[2rem] 
+      h-[2rem] cursor-pointer text-white' />
       
       {/* nav links */}
       <div className={`bg-emerald-700 ${navStyle} transition-all duration-500 delay-200 

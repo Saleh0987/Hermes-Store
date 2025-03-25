@@ -22,20 +22,29 @@ const Categories = () => {
 
   return (
     <div className="my-4">
-      <h1 className="text-3xl font-semibold mb-4">Categories</h1>
-      {loading ? <Spinner /> : 
+      <h1 className="text-2xl lg:text-3xl font-semibold my-4 text-center lg:text-start">
+        Categories
+      </h1>
+      {loading ? (
+        <Spinner />
+      ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {categories.map((category) => (
-          <Link to={`/categoriesitems/${category._id}`} key={category._id} className="bg-white p-4 rounded-lg shadow-md">
-            <img
-              src={category.image}
-              alt={category.name}
-              className="w-full h-[250px] mb-2"
-            />
-            <p className="text-center text-gray-700">{category.name}</p>
-          </Link>
-        ))}
-      </div>}
+          {categories.map((category) => (
+            <Link
+              to={`/categoriesitems/${category._id}`}
+              key={category._id}
+              className="bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src={category.image}
+                alt={category.name}
+                className="w-full h-[250px] mb-2"
+              />
+              <p className="text-center text-gray-700">{category.name}</p>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

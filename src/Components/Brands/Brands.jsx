@@ -23,20 +23,29 @@ const Brands = () => {
 
   return (
     <div className="my-4">
-      <h1 className="text-3xl font-semibold mb-4">Brands</h1>
-      {loading ? <Spinner /> :
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {brands?.map((brand) => (
-          <Link key={brand._id} to={`/brandsItem/${brand._id}`} className="bg-white p-4 rounded-lg shadow-md">
-            <img
-              src={brand.image} 
-              alt={brand.name}
-              className="w-full h-32 object-cover mb-2"
-            />
-            <p className="text-center text-gray-700">{brand.name}</p>
-          </Link>
-        ))}
-      </div>}
+      <h1 className="text-2xl lg:text-3xl font-semibold my-4 text-center lg:text-start">
+        Brands
+      </h1>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {brands?.map((brand) => (
+            <Link
+              key={brand._id}
+              to={`/brandsItem/${brand._id}`}
+              className="bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src={brand.image}
+                alt={brand.name}
+                className="w-full h-32 object-cover mb-2"
+              />
+              <p className="text-center text-gray-700">{brand.name}</p>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

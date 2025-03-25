@@ -24,7 +24,7 @@ export default function brandsSlider() {
  var settings = {
     dots: false,
     infinite: true,
-    speed: 1000,
+    speed: 2500,
     slidesToShow: 6, // Show 4 slides by default
     slidesToScroll: 3,
     arrows: false,
@@ -56,14 +56,26 @@ export default function brandsSlider() {
 };
 
     
-  return <>
-    <h2 className="text-3xl font-semibold my-2">Brands</h2>
-    <Slider {...settings}>
-      {brands?.map((brand, index) =>
-        <Link key={index} className='my-2 border border-red-500 p-1 text-center cursor-pointer' to={`/brandsItem/${brand._id}`}>
-        <img src={brand.image} className='w-full h-[100px]' alt={brand.name} />
-      </Link>)}
-    </Slider>
-  
-  </>
+  return (
+    <>
+      <h2 className="text-2xl lg:text-3xl font-semibold my-4 text-center lg:text-start">
+        Brands
+      </h2>
+      <Slider {...settings}>
+        {brands?.map((brand, index) => (
+          <Link
+            key={index}
+            className="my-2 border border-gray-300 p-1 text-center cursor-pointer"
+            to={`/brandsItem/${brand._id}`}
+          >
+            <img
+              src={brand.image}
+              className="w-full h-[100px]"
+              alt={brand.name}
+            />
+          </Link>
+        ))}
+      </Slider>
+    </>
+  );
 }

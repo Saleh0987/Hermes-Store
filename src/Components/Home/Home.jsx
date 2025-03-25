@@ -36,7 +36,7 @@ export default function Home() {
       
       <CategoriesSlider />
 
-      <h2 className="text-3xl font-semibold my-2">Recent Products</h2>
+      <h2 className="text-2xl lg:text-3xl font-semibold my-4 text-center lg:text-start">Recent Products</h2>
         {loading ? (
           <Spinner /> 
         

@@ -57,7 +57,7 @@ const Nav = ({ openNav }) => {
         <div className="flex items-center space-x-2">
             {userData ? (
             <Link to="">
-              <h1 className='text-3xl font-extralight'>Hermès</h1>
+              <h1 className='text-3xl font-bold'>Hermès</h1>
               {/* <img src={logo} width={120} alt="Freshcart_Logo" /> */}
             </Link>
           ) : (

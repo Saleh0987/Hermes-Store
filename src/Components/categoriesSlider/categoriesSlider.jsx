@@ -24,8 +24,8 @@ export default function CategoriesSlider() {
  var settings = {
     dots: false,
     infinite: true,
-    speed: 1000,
-    slidesToShow: 6, // Show 4 slides by default
+    speed: 2500,
+    slidesToShow: 5, 
     slidesToScroll: 3,
     arrows: false,
     autoplay: true,
@@ -34,14 +34,14 @@ export default function CategoriesSlider() {
         {
             breakpoint: 1024,
             settings: {
-                slidesToShow: 6,
+                slidesToShow: 5,
                 slidesToScroll: 3,
             },
         },
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 4,
+                slidesToShow: 3,
                 slidesToScroll: 2,
             },
         },
@@ -58,14 +58,27 @@ export default function CategoriesSlider() {
 
 
     
-  return <>
-    <h2 className="text-3xl font-semibold my-2">Categories</h2>
-    <Slider {...settings}>
-      {categories?.map((category, index) => <Link to={`/categoriesitems/${category._id}`} key={index} className='my-2 p-1 text-center cursor-pointer'>
-        <img src={category.image} className='w-full h-[200px]' alt={category.name} />
-        <h3 className='my-2'>{category.name}</h3>
-      </Link>)}
-    </Slider>
-  
-  </>
+  return (
+    <>
+      <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-center lg:text-start my-4">
+        Categories
+      </h2>
+      <Slider {...settings}>
+        {categories?.map((category, index) => (
+          <Link
+            to={`/categoriesitems/${category._id}`}
+            key={index}
+            className="my-2 p-1 text-center cursor-pointer"
+          >
+            <img
+              src={category.image}
+              className="w-full h-[200px] rounded-md"
+              alt={category.name}
+            />
+            <h3 className="my-2">{category.name}</h3>
+          </Link>
+        ))}
+      </Slider>
+    </>
+  );
 }
